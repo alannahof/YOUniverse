@@ -53,7 +53,7 @@ public class Main_SignIn_Page {
             public void onClick(View view) {
                 //Set up what needs to be done. User name checked, password checked, etc etc
                 Log.d ("Proceed Button", "Proceed Button Clicked");
-                ControlCentre.setLayout_AvatarPage ();
+                ControlCentre.setLayout_GamePage ();
             }
         });
 

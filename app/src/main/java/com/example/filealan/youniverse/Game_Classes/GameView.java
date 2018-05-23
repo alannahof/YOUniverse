@@ -92,7 +92,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
             super.draw(canvas);
             if(canvas!=null) {
-                canvas.drawRGB(0, 100, 205);
+
+                /**Commented out code below will make the game background space but the image is too large and slows down the game time. Need to compress image or find alternative*/
+                //Bitmap space_background = getResizedBitmap ((BitmapFactory.decodeResource(getResources(),R.drawable.space_theme_landscape)),screenWidth,screenHeight);
+                //canvas.drawBitmap(space_background,0,0,null);
+
+                canvas.drawRGB (72,61,139);
                 characterAlien.draw(canvas);
                 pipe1.draw(canvas);
                 pipe2.draw(canvas);
@@ -116,9 +121,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             int y;
             int x;
             bmp = getResizedBitmap(BitmapFactory.decodeResource
-                    (getResources(), R.drawable.pipe_down), 500, Resources.getSystem().getDisplayMetrics().heightPixels / 2);
+                    (getResources(), R.drawable.robot), 500, Resources.getSystem().getDisplayMetrics().heightPixels / 2);
             bmp2 = getResizedBitmap
-                    (BitmapFactory.decodeResource(getResources(), R.drawable.pipe_up), 500, Resources.getSystem().getDisplayMetrics().heightPixels / 2);
+                    (BitmapFactory.decodeResource(getResources(), R.drawable.rocket), 500, Resources.getSystem().getDisplayMetrics().heightPixels / 2);
 
             pipe1 = new ObstacleObject (bmp, bmp2, 2000, 100);
             pipe2 = new ObstacleObject (bmp, bmp2, 4500, 100);
