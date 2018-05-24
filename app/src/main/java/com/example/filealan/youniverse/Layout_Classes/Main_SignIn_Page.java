@@ -16,6 +16,9 @@ public class Main_SignIn_Page {
     private static Main_SignIn_Page instance = null;
     Activity activity;
 
+    /**Placeholder variable for user_name*/
+    String user_name;
+
     /**
      * Constructor to set up the Main Page
      * This corresponds with activity_main.xml
@@ -35,10 +38,11 @@ public class Main_SignIn_Page {
     public void setUpMainPage() {
 
        TextView clickText = (TextView) activity.findViewById (R.id.clickText);
-       TextView userName = (TextView) activity.findViewById (R.id.userName);
+       final TextView userName = (TextView) activity.findViewById (R.id.userName);
        TextView password = (TextView) activity.findViewById (R.id.password);
        TextView welcomeText = (TextView) activity.findViewById (R.id.welcomeText);
-       EditText userNameField = (EditText) activity.findViewById (R.id.userNameField);
+
+       final EditText userNameField = (EditText) activity.findViewById (R.id.userNameField);
        EditText  passwordField = (EditText) activity.findViewById (R.id.passwordField);
        Button  proceedButton = (Button) activity.findViewById (R.id.proceedButton);
 
@@ -48,16 +52,24 @@ public class Main_SignIn_Page {
                ControlCentre.setLayout_SignUpPage();
            }
        });
+
+        Log.d ("Username before proceed", "" + user_name);
        proceedButton.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                //Set up what needs to be done. User name checked, password checked, etc etc
-                Log.d ("Proceed Button", "Proceed Button Clicked");
-                ControlCentre.setLayout_GamePage ();
+
+                user_name = userNameField.getText ().toString ();
+
+                if(user_name.equals ("") || user_name.equals (null)){
+                    //What to do if they don't enter a username
+                } else {
+
+                    //Set up what needs to be done. User name checked, password checked, etc etc
+                    MainActivity.username = user_name;
+                    ControlCentre.setLayout_AvatarPage ();
+                }
             }
         });
-
-
     }
 
     /**

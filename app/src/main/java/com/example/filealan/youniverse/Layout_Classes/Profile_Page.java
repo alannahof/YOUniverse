@@ -30,6 +30,8 @@ public class Profile_Page {
     public void setLayout(){
 
         TextView username = (TextView) activity.findViewById (R.id.profile_UserName);
+        username.setText (MainActivity.username);
+
         ImageView avatar = (ImageView) activity.findViewById (R.id.profile_avatar_placeholder);
         ImageView profile_level_image = (ImageView) activity.findViewById (R.id.profile_level_image);
         TextView profile_level_text = (TextView)activity.findViewById (R.id.profile_level_reached);
