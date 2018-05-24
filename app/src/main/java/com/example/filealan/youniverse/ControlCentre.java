@@ -38,7 +38,7 @@ public class ControlCentre {
         } else if (MainActivity.layout_state == R.layout.map_progress_screen){
             setLayout_MapPage();
         } else {
-            setLayout_GamePage ();
+            //setLayout_GamePage ();
         }
     }
 
@@ -91,10 +91,10 @@ public class ControlCentre {
 
     }
 
-    public static void setLayout_GamePage(){
-        Game_Page mappage = Game_Page.getInstance(act);
-
-    }
+//    public static void setLayout_GamePage(){
+//        Game_Page mappage = Game_Page.getInstance(act);
+//
+//    }
     /**
      * Returns the instance of the control centre
      * */

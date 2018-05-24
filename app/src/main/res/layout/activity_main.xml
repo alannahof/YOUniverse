@@ -14,10 +14,10 @@
 
         <TextView
             android:id="@+id/TitleText"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
             android:baselineAligned="false"
+            android:gravity="center"
             android:paddingTop="20dp"
             android:text="YOUniverse"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2"
@@ -29,65 +29,48 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingTop="35dp"
             android:text="Welcome to your universe!"
+            android:textSize="18sp"
             tools:fontFamily="@font/acme" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/userName"
-                android:layout_width="91dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="45dp"
-                android:text="Username"
-                tools:fontFamily="@font/acme" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            android:padding="20dp">
 
             <EditText
                 android:id="@+id/userNameField"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
+                android:hint="Username"
                 android:inputType="textPersonName" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/password"
-                android:layout_width="92dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="45dp"
-                android:text="Password"
-                tools:fontFamily="@font/acme" />
 
             <EditText
                 android:id="@+id/passwordField"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:inputType="textPassword" />
-        </LinearLayout>
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textAlignment="center" />
 
-        <Button
-            android:id="@+id/proceedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="Proceed" />
+            <Button
+                android:id="@+id/proceedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Proceed" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/clickText"
@@ -95,6 +78,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:clickable="true"
-            android:text="Not a member? Sign up " />
+            android:text="Not a member? Sign up "
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="16sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

@@ -38,8 +38,6 @@ public class Main_SignIn_Page {
     public void setUpMainPage() {
 
        TextView clickText = (TextView) activity.findViewById (R.id.clickText);
-       final TextView userName = (TextView) activity.findViewById (R.id.userName);
-       TextView password = (TextView) activity.findViewById (R.id.password);
        TextView welcomeText = (TextView) activity.findViewById (R.id.welcomeText);
 
        final EditText userNameField = (EditText) activity.findViewById (R.id.userNameField);
@@ -61,7 +59,7 @@ public class Main_SignIn_Page {
                 user_name = userNameField.getText ().toString ();
 
                 if(user_name.equals ("") || user_name.equals (null)){
-                    //What to do if they don't enter a username
+                    //What to do if they don't enter a user_name
                 } else {
 
                     //Set up what needs to be done. User name checked, password checked, etc etc

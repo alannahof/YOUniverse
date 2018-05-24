@@ -1,10 +1,10 @@
 package com.example.filealan.youniverse.Layout_Classes;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.filealan.youniverse.ControlCentre;
 import com.example.filealan.youniverse.MainActivity;
@@ -17,7 +17,7 @@ public class Sign_Up_Page {
 
     /**Placeholder variables for when we are going to save this information
      * Will need to add a class to hash passwords*/
-    String username;
+    String user_name;
     String email;
     String password;
 
@@ -37,17 +37,24 @@ public void setSignUpLayout(){
     final EditText signUp_email  = (EditText)activity.findViewById(R.id.emailAddress_signup);
     Button signUp_Button = (Button)activity.findViewById(R.id.button_signup);
 
+
+
     signUp_Button.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
 
-            username = signUp_userName.getText ().toString ();
-            MainActivity.username = username;
+            user_name = signUp_userName.getText ().toString ();
+            Log.d ("Username", "" + user_name);
 
             email = signUp_email.getText ().toString ();
             password = signUp_password.getText ().toString ();
 
-            ControlCentre.setLayout_AvatarPage();
+            if (user_name.equals("") || user_name.equals (null)){
+                //Tell the user that they didn't enter anything
+            } else {
+                MainActivity.username = user_name;
+                ControlCentre.setLayout_AvatarPage ();
+            }
         }
     });
 

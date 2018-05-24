@@ -23,10 +23,6 @@ public class Avatar_Selection_Page {
     int current_avatar;
     int currentListIndex = 0;
 
-    //This variable is necessary to remember the avatar that the user has selected.
-    // Will need to save in Shared Preferencesj
-    int selected_avatar;
-
     /**
      * Constructor to set up the Avatar Selection Page
      * */
@@ -79,9 +75,14 @@ public class Avatar_Selection_Page {
         TextView avatar_username_display = (TextView)activity.findViewById (R.id.avatar_username);
         avatar_username_display.setText (MainActivity.username);
 
-        final ImageButton avatar_back_button = (ImageButton) activity.findViewById (R.id.avatar_button_back);
+        final ImageView avatar_back_button = (ImageView) activity.findViewById (R.id.avatar_button_back);
+        avatar_back_button.setImageResource (R.drawable.arrow_white);
+
         final ImageView avatar_image = (ImageView) activity.findViewById (R.id.avatar_image);
-        ImageButton avatar_next_button = (ImageButton) activity.findViewById (R.id.avatar_button_next);
+        ImageView avatar_next_button = (ImageView) activity.findViewById (R.id.avatar_button_next);
+        avatar_next_button.setImageResource (R.drawable.arrow_white);
+        avatar_next_button.setRotation (180);
+
         final Button avatar_ready = (Button) activity.findViewById (R.id.avatar_button_ready);
 
         avatar_image.setImageResource (avatars.get(currentListIndex));
@@ -91,7 +92,7 @@ public class Avatar_Selection_Page {
             public void onClick(View view) {
                 Log.d("ready button", "button pressed to map world");
                 //Need to remember the avatar that was selected
-                selected_avatar = avatars.get(currentListIndex);
+                MainActivity.selected_avatar = avatars.get(currentListIndex);
                 ControlCentre.setLayout_MapPage();
             }
         });

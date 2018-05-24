@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/space_theme"
     android:orientation="vertical">
 
     <TextView
@@ -11,78 +12,75 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
+        android:gravity="center"
         android:paddingTop="20dp"
         android:text="Your Name"
-        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textStyle="bold"
-        tools:fontFamily="@font/acme"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="25dp" />
-
-    <ImageView
-        android:id="@+id/profile_avatar_placeholder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/avatar_knight_fore"
-        tools:layout_editor_absoluteX="110dp"
-        tools:layout_editor_absoluteY="139dp" />
+        tools:fontFamily="@font/acme" />
 
     <LinearLayout
         android:id="@+id/profile_level_achieved"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
         android:paddingLeft="50dp"
         android:paddingRight="50dp">
 
         <ImageView
-            android:id="@+id/profile_level_image"
-            android:layout_width="76dp"
-            android:layout_height="47dp"
-            android:layout_weight="0.2"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:id="@+id/profile_avatar_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/alien_legs_big" />
 
         <EditText
             android:id="@+id/profile_level_reached"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.8"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Junior Explorer" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/profile_levels_completed"
-        android:layout_width="match_parent"
-        android:layout_height="238dp"
-        android:layout_marginTop="20dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
+            android:text="Junior Explorer"
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/profile_level1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@android:color/darker_gray"
             android:text="Level 1 Complete"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/profile_level2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@android:color/darker_gray"
             android:text="Level 2 Complete"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/profile_level3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@android:color/darker_gray"
             android:text="Level 3 Complete"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -93,27 +91,30 @@
         android:gravity="end"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/profile_settings"
+        <ImageView
+            android:id="@+id/profile_back_map_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@android:drawable/ic_menu_manage" />
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/map_black" />
 
-        <TextView
-            android:id="@+id/profile_placeholder"
+        <ImageView
+            android:id="@+id/profile_settings_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="3" />
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@android:drawable/ic_menu_manage" />
 
         <TextView
             android:id="@+id/profile_points"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:layout_weight="1"
+            android:fontFamily="@font/acme"
             android:gravity="right"
-            android:text="200 "
-            android:textSize="30sp" />
+            android:text="200 tokens"
+            android:textSize="24sp" />
     </LinearLayout>
 
 </LinearLayout>

@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
     public static ControlCentre control;
     public static int layout_state;
     public static String username;
+    public static int selected_avatar;
 
     /**
      *
