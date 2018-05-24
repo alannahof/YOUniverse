@@ -40,7 +40,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="30dp"
-            app:srcCompat="@drawable/green_alien_antenna" />
+            app:srcCompat="@drawable/astronaut_avatar" />
 
         <ImageButton
             android:id="@+id/avatar_button_next"

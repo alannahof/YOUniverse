@@ -4,6 +4,7 @@
     android:id="@+id/overall_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/space_theme2"
     android:orientation="vertical">
 
 
@@ -20,6 +21,8 @@
         android:id="@+id/placeholder_spaceship"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:padding="30dp"
+        android:rotation="90"
+        app:srcCompat="@drawable/rocket" />
 
 </LinearLayout>
