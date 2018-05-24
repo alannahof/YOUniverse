@@ -8,10 +8,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import com.example.filealan.youniverse.ControlCentre;
 import com.example.filealan.youniverse.R;
 
 import java.util.Random;
@@ -213,14 +215,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
 
         public void resetLevel() {
-            characterAlien.y = 100;
-            pipe1.xX = 2000;
-            pipe1.yY = 0;
-            pipe2.xX = 4500;
-            pipe2.yY = 200;
-            pipe3.xX = 3200;
-            pipe3.yY = 250;
-            score = 0;
+
+            Log.d ("RESET", "Try to reset level");
+            thread.interrupt ();
+            ControlCentre.setLayout_ProfilePage ();
 
         }
 
