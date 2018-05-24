@@ -56,8 +56,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:hint="Password"
-                android:inputType="textPassword"
-                android:textAlignment="center" />
+                android:inputType="textPassword" />
 
             <Button
                 android:id="@+id/proceedButton"
