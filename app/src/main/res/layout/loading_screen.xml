@@ -27,6 +27,6 @@
         android:layout_height="wrap_content"
         android:padding="30dp"
         android:rotation="90"
-        app:srcCompat="@drawable/rocket" />
+        app:srcCompat="@color/colorPrimaryDark" />
 
 </LinearLayout>
