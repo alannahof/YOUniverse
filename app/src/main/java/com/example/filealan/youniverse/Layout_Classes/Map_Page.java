@@ -48,7 +48,7 @@ public class Map_Page {
 //        int width = displayMetrics.widthPixels;
 //        final double popupHeight = height*0.6;
 //        final double popupWidth = width*0.72;
-
+//
 //        popUp.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {

@@ -3,6 +3,7 @@ package com.example.filealan.youniverse;
 import android.app.Activity;
 import android.util.Log;
 
+import com.example.filealan.youniverse.Layout_Classes.Alien_Guide_Page;
 import com.example.filealan.youniverse.Layout_Classes.Avatar_Selection_Page;
 import com.example.filealan.youniverse.Layout_Classes.Game_Page;
 import com.example.filealan.youniverse.Layout_Classes.Main_SignIn_Page;
@@ -37,7 +38,9 @@ public class ControlCentre {
             setLayout_SignUpPage();
         } else if (MainActivity.layout_state == R.layout.map_progress_screen){
             setLayout_MapPage();
-        } else {
+        } else if (MainActivity.layout_state == R.layout.alien_guide){
+            setLayout_AlienGuide();
+        }else {
             //setLayout_GamePage ();
         }
     }
@@ -93,6 +96,11 @@ public class ControlCentre {
 
     public static void setLayout_GamePage(){
         Game_Page mappage = Game_Page.getInstance(act);
+
+    }
+
+    public static void setLayout_AlienGuide(){
+        Alien_Guide_Page alienguide = Alien_Guide_Page.getInstance(act);
 
     }
     /**
