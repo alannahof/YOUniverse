@@ -91,10 +91,10 @@ public class ControlCentre {
 
     }
 
-//    public static void setLayout_GamePage(){
-//        Game_Page mappage = Game_Page.getInstance(act);
-//
-//    }
+    public static void setLayout_GamePage(){
+        Game_Page mappage = Game_Page.getInstance(act);
+
+    }
     /**
      * Returns the instance of the control centre
      * */
