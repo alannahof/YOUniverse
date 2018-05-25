@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@android:color/transparent">
+
+
+    <!--<FrameLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/speech"-->
+            <!--android:layout_width="350dp"-->
+            <!--android:layout_height="221dp"-->
+            <!--android:layout_gravity="left"-->
+            <!--android:layout_weight="2"-->
+            <!--android:cropToPadding="false"-->
+            <!--app:srcCompat="@drawable/speech_bubble" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/greetingsText"-->
+            <!--android:layout_width="265dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="2"-->
+            <!--android:paddingLeft="80dp"-->
+            <!--android:paddingTop="30dp"-->
+            <!--android:text="Greetings_______, you've entered the YOUniverse. Click on the planet to begin your journey!"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColorHint="@android:color/background_dark"-->
+            <!--android:textSize="18sp"-->
+            <!--tools:fontFamily="@font/acme" />-->
+
+
+    <!--</FrameLayout>-->
+
+    <ImageView
+        android:id="@+id/alienGuide"
+        android:layout_width="500dp"
+        android:layout_height="298dp"
+        android:layout_gravity="bottom|right"
+        android:layout_weight="1"
+        android:cropToPadding="false"
+        android:paddingRight="100dp"
+        app:srcCompat="@drawable/alien_guide" />
+</LinearLayout>
