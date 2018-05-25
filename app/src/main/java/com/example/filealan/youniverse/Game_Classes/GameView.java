@@ -1,6 +1,10 @@
 package com.example.filealan.youniverse.Game_Classes;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -8,12 +12,15 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.os.Build;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import com.example.filealan.youniverse.ControlCentre;
+import com.example.filealan.youniverse.GameActivity;
+import com.example.filealan.youniverse.MainActivity;
 import com.example.filealan.youniverse.R;
 
 import java.util.Random;
@@ -22,6 +29,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
 
         private MainThread thread;
+        Activity activity2;
+
         private AlienObject characterAlien;
         public ObstacleObject pipe1, pipe2, pipe3;
         public int score = 0;
@@ -30,13 +39,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         private int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
         private int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
 
-        public GameView(Context context) {
+        public GameView(Context context, Activity act2) {
             super(context);
-
+            activity2 = act2;
+            MainActivity.layout_state = 5; //Randomly picked Alannah's favourite number, 5 has no meaning
             getHolder().addCallback(this);
-
             thread = new MainThread(getHolder(), this);
-
             setFocusable(true);
 
         }
@@ -216,10 +224,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         public void resetLevel() {
 
-            Log.d ("RESET", "Try to reset level");
-            thread.interrupt ();
-            ControlCentre.setLayout_ProfilePage ();
-
+            //Need to go back to the first activity.
+            //Finish the second activity and go back to the next screen
+            activity2.finish ();
         }
 
     }
