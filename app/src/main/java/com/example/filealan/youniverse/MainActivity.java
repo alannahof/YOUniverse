@@ -3,6 +3,7 @@ package com.example.filealan.youniverse;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,6 +28,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Log.d("Main", "OnCreate");
+
         //Initialises the control centre and sets the layout
         control = ControlCentre.getInstance (this);
         if (savedInstanceState !=null){
@@ -39,13 +42,23 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    protected void onResume(){ super.onResume ();
+        Log.d("Main", "OnResume");
+        //Put code so that if you are coming from the game you are directed to another screen
+
+        if (layout_state == 5) {
+            setContentView (R.layout.profile_page);
+        }
+   }
+
+    @Override
     protected void onPause() {
-        super.onPause ();
+        super.onPause ();Log.d("Main", "OnPause");
     }
 
     @Override
     protected void onSaveInstanceState (Bundle outState){
-        super.onSaveInstanceState (outState);
+        super.onSaveInstanceState (outState);Log.d("Main", "OnSaveInstancec");
     }
 }
 

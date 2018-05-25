@@ -1,28 +1,16 @@
 package com.example.filealan.youniverse.Layout_Classes;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.media.Image;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 
 import com.example.filealan.youniverse.ControlCentre;
-import com.example.filealan.youniverse.MainActivity;
+import com.example.filealan.youniverse.GameActivity;
+import com.example.filealan.youniverse.Game_Classes.GameView;
 import com.example.filealan.youniverse.R;
-
-import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 public class Map_Page {
 
@@ -40,6 +28,16 @@ public class Map_Page {
         ImageButton settingsButton = (ImageButton)activity.findViewById(R.id.profile_settings);
         ImageView image1 = (ImageView)activity.findViewById(R.id.planet_placeholder1);
         ImageView image2 = (ImageView)activity.findViewById(R.id.planet_placeholder2);
+
+        image2.setImageResource (R.drawable.astronaut_avatar);
+
+        image2.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                     activity.startActivity(new Intent (activity, GameActivity.class));
+
+            }
+        });
 //        Button popUp = (Button)activity.findViewById(R.id.popUpButton);
 //
 //        DisplayMetrics displayMetrics = new DisplayMetrics();
