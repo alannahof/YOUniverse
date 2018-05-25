@@ -5,7 +5,6 @@ import android.util.Log;
 
 import com.example.filealan.youniverse.Layout_Classes.Alien_Guide_Page;
 import com.example.filealan.youniverse.Layout_Classes.Avatar_Selection_Page;
-import com.example.filealan.youniverse.Layout_Classes.Game_Page;
 import com.example.filealan.youniverse.Layout_Classes.Main_SignIn_Page;
 import com.example.filealan.youniverse.Layout_Classes.Map_Page;
 import com.example.filealan.youniverse.Layout_Classes.Profile_Page;
@@ -94,15 +93,17 @@ public class ControlCentre {
 
     }
 
-    public static void setLayout_GamePage(){
-        Game_Page mappage = Game_Page.getInstance(act);
 
-    }
+    //public static void setLayout_GamePage(){
+        //Game_Page mappage = Game_Page.getInstance(act);
+
+    //}
 
     public static void setLayout_AlienGuide(){
         Alien_Guide_Page alienguide = Alien_Guide_Page.getInstance(act);
 
     }
+
     /**
      * Returns the instance of the control centre
      * */
