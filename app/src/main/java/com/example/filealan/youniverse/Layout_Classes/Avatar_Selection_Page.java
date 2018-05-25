@@ -93,7 +93,7 @@ public class Avatar_Selection_Page {
                 Log.d("ready button", "button pressed to map world");
                 //Need to remember the avatar that was selected
                 MainActivity.selected_avatar = avatars.get(currentListIndex);
-                ControlCentre.setLayout_MapPage();
+                ControlCentre.setLayout_AlienGuide();
             }
         });
 
