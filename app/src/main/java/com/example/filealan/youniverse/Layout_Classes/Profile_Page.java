@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.filealan.youniverse.ControlCentre;
+import com.example.filealan.youniverse.GameActivity;
 import com.example.filealan.youniverse.MainActivity;
 import com.example.filealan.youniverse.R;
 
@@ -17,7 +18,6 @@ public class Profile_Page {
 
     private static Profile_Page instance = null;
     Activity activity;
-
     /**
      * Constructor to set up the User Profile Page
      * */
@@ -47,6 +47,8 @@ public class Profile_Page {
         ImageView profile_settings = (ImageView)activity.findViewById (R.id.profile_settings_button);
         TextView profile_points = (TextView) activity.findViewById (R.id.profile_points);
         ImageView selectAvatar = (ImageView)activity.findViewById(R.id.avatarSelection);
+
+        profile_points.setText(GameActivity.score + "tokens");
 
         profile_settings.setOnClickListener (new View.OnClickListener () {
             @Override
