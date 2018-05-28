@@ -125,7 +125,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         private void makeLevel() {
 
-            Bitmap alienCharacter = getResizedBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.alien_legs_small), 300, 240);
+            Bitmap alienCharacter = getResizedBitmap(BitmapFactory.decodeResource(getResources(), MainActivity.selected_avatar), 300, 240);
             characterAlien = new AlienObject (getRotatedBitmap(alienCharacter, 90));
 
             Bitmap bmp;

@@ -1,7 +1,11 @@
 package com.example.filealan.youniverse.Layout_Classes;
 
 import android.app.Activity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
+import com.example.filealan.youniverse.ControlCentre;
 import com.example.filealan.youniverse.MainActivity;
 import com.example.filealan.youniverse.R;
 
@@ -17,6 +21,14 @@ public class Settings_Page {
     }
 
     public void setSettingsLayout(){
+
+        ImageButton change_avatar = (ImageButton) activity.findViewById (R.id.settings_avatar_change);
+        change_avatar.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                ControlCentre.setLayout_AvatarPage ();
+            }
+        });
     }
 
     public static Settings_Page getInstance(Activity act) {
