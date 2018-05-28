@@ -64,7 +64,7 @@ public class Main_SignIn_Page {
 
                     //Set up what needs to be done. User name checked, password checked, etc etc
                     MainActivity.username = user_name;
-                    ControlCentre.setLayout_AvatarPage ();
+                    ControlCentre.setLayout_ProfilePage ();
                 }
             }
         });

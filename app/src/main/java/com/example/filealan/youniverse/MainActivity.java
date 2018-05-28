@@ -83,6 +83,9 @@ public class MainActivity extends Activity {
         super.onResume ();
         Log.d("Main", "OnResume");
 
+        if (layout_state == 5) {
+            setContentView (R.layout.evaluation);
+        }
         //REMEMBER IF YOU CAME FROM THE GAME SO YOU CAN REDIRECT TO APPROPRIATE LAYOUT
    }
 

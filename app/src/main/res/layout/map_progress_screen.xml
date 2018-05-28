@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    //  android:background="@drawable/space_theme2"
 
     <TextView
         android:id="@+id/titleText"
@@ -30,38 +29,15 @@
             android:layout_width="300dp"
             android:layout_height="269dp"
             android:layout_gravity="left"
-            app:srcCompat="@drawable/ice_planet" />
-
-        <!--<ImageView-->
-        <!--android:id="@+id/speech"-->
-        <!--android:layout_width="239dp"-->
-        <!--android:layout_height="183dp"-->
-        <!--android:layout_gravity="bottom|right"-->
-        <!--android:layout_weight="1"-->
-        <!--android:cropToPadding="false"-->
-        <!--app:srcCompat="@drawable/speech_bubble" />-->
-
-
-        <!--<TextView-->
-        <!--android:id="@+id/greetingsText"-->
-        <!--android:layout_width="181dp"-->
-        <!--android:layout_height="186dp"-->
-        <!--android:layout_gravity="bottom|right"-->
-        <!--android:layout_weight="2"-->
-        <!--android:paddingTop="30dp"-->
-        <!--android:paddingRight="50dp"-->
-        <!--android:text="Greetings! you've entered the YOUniverse. Click on the planet to begin your journey!"-->
-        <!--android:textAlignment="center"-->
-        <!--android:textColorHint="@android:color/background_dark"-->
-        <!--android:textSize="12sp"-->
-        <!--tools:fontFamily="@font/acme" />-->
-
+            android:src="@drawable/ice_planet" />
 
     </FrameLayout>
 
     <FrameLayout
+        android:id="@+id/planetFrame"
         android:layout_width="wrap_content"
-        android:layout_height="500dp">
+        android:layout_height="500dp"
+        android:onClick="openGame">
 
 
         <ImageView
@@ -70,21 +46,18 @@
             android:layout_height="381dp"
             android:layout_weight="6"
             android:cropToPadding="false"
-            app:srcCompat="@drawable/strineo" />
+            android:src="@drawable/strineo" />
 
-        <!--<ImageView-->
-        <!--android:id="@+id/alien_guide"-->
-        <!--android:layout_width="171dp"-->
-        <!--android:layout_height="267dp"-->
-        <!--app:srcCompat="@drawable/alien_guide" />-->
-
-
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:paddingTop="150dp"
+            android:text="Tap on the planet"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="25dp"
+            tools:fontFamily="@font/acme" />
     </FrameLayout>
-
-
-
-
 
     <LinearLayout
         android:id="@+id/footer"
