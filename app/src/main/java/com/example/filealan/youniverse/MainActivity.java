@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
         //Put code so that if you are coming from the game you are directed to another screen
 
         if (layout_state == 5) {
-            setContentView (R.layout.profile_page);
+            setContentView (R.layout.evaluation);
         }
    }
 

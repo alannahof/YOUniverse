@@ -27,14 +27,14 @@ public class Alien_Guide_Page {
     public void setAlienPage(){
 
         ImageView speechBubble = (ImageView)activity.findViewById(R.id.speech);
-        speechBubble.setImageResource(R.drawable.speech_bubble);
+
         TextView greetingsText = (TextView)activity.findViewById(R.id.greetingsText);
         ImageView alienGuide = (ImageView)activity.findViewById(R.id.alien_guide);
-        alienGuide.setImageResource(R.drawable.alien_guide);
+
         ImageView planet1 = (ImageView)activity.findViewById(R.id.planet1);
-        planet1.setImageResource(R.drawable.strineo);
+
         ImageView planet2 = (ImageView)activity.findViewById(R.id.planet2);
-        planet2.setImageResource(R.drawable.ice_planet);
+
 
         Button yeah = (Button)activity.findViewById(R.id.yeahButton);
 

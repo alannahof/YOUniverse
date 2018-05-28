@@ -92,18 +92,19 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/profile_back_map_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/profile_settings_button"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="10dp"
-            app:srcCompat="@drawable/map_black" />
+            android:src="?android:attr/textSelectHandle"/>
 
         <ImageView
-            android:id="@+id/profile_settings_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/avatarSelection"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="10dp"
-            app:srcCompat="@android:drawable/ic_menu_manage" />
+            android:onClick="selectAvatar"
+            android:src="@drawable/alien_guide" />
 
         <TextView
             android:id="@+id/profile_points"

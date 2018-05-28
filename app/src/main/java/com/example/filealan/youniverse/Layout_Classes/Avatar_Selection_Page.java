@@ -38,12 +38,12 @@ public class Avatar_Selection_Page {
      * Can add as many images as we want to this list*/
     public ArrayList<Integer> avatarArray(){
         avatars = new ArrayList<Integer> ();
-        avatars.add (R.drawable.astronaut_avatar);
+        avatars.add (R.drawable.avatar_1);
         avatars.add (R.drawable.green_alien_antenna);
         avatars.add (R.drawable.robot);
         avatars.add (R.drawable.alien_legs_big);
         avatars.add (R.drawable.green_alien_face);
-        avatars.add (R.drawable.rocket);
+        avatars.add (R.drawable.avatar_2);
         avatars.add (R.drawable.worldwide);
         return avatars;
     }

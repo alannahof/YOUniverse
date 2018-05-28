@@ -1,6 +1,7 @@
 package com.example.filealan.youniverse.Layout_Classes;
 
 import android.app.Activity;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -44,8 +45,8 @@ public class Profile_Page {
         TextView profile_level3 = (TextView) activity.findViewById (R.id.profile_level3);
 
         ImageView profile_settings = (ImageView)activity.findViewById (R.id.profile_settings_button);
-        ImageView profile_back_map = (ImageView) activity.findViewById (R.id.profile_back_map_button);
         TextView profile_points = (TextView) activity.findViewById (R.id.profile_points);
+        ImageView selectAvatar = (ImageView)activity.findViewById(R.id.avatarSelection);
 
         profile_settings.setOnClickListener (new View.OnClickListener () {
             @Override
@@ -55,18 +56,11 @@ public class Profile_Page {
             }
         });
 
-        avatar.setOnClickListener (new View.OnClickListener () {
+        selectAvatar.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
                 //Go to avatar customisation screen once clicked
                 ControlCentre.setLayout_AvatarPage ();
-            }
-        });
-
-        profile_back_map.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-                ControlCentre.setLayout_SettingsPage ();
             }
         });
     }
