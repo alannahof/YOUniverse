@@ -5,15 +5,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.filealan.youniverse.User_Classes.UserObject;
-
 import static java.lang.Boolean.FALSE;
 
 public class MainActivity extends Activity {
 
     /**In-application variables*/
     public static ControlCentre control;
-    UserObject user;
 
     /**
      * Variables to be stored THROUGH-SESSIONS, i.e. persistent data that exists even when user closes application
