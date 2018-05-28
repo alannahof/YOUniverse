@@ -16,7 +16,7 @@ public class AlienObject {
 
     public AlienObject (Bitmap bmp) {
         image = bmp;
-        x = 100;
+        x = 500;
         y = 100;
     }
 

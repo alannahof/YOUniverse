@@ -34,7 +34,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         private AlienObject characterAlien;
         public ObstacleObject pipe1, pipe2, pipe3;
         public int score = 0;
-        public static int gapHeight = 500;
+        public static int gapHeight = 600;
         public static int velocity = 10;
         private int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
         private int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
@@ -103,10 +103,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             super.draw(canvas);
             if(canvas!=null) {
 
-                /**Commented out code below will make the game background space but the image is too large and slows down the game time. Need to compress image or find alternative*/
-                //Bitmap space_background = getResizedBitmap ((BitmapFactory.decodeResource(getResources(),R.drawable.space_theme_landscape)),screenWidth,screenHeight);
-                //canvas.drawBitmap(space_background,0,0,null);
-
                 canvas.drawRGB (72,61,139);
                 characterAlien.draw(canvas);
                 pipe1.draw(canvas);
@@ -121,11 +117,17 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             paint.setColor(Color.WHITE);
             paint.setStyle(Paint.Style.FILL);
             paint.setTextSize(50);
-            canvas.drawText("Score: " + score, 30, 50, paint);
+            paint.setTextAlign(Paint.Align.LEFT);
+            canvas.rotate(90);
+            canvas.drawText("Score: " + score, 30, -50, paint);
+            canvas.restore();
         }
 
         private void makeLevel() {
-            characterAlien = new AlienObject (getResizedBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.alien_legs_small), 300, 240));
+
+            Bitmap alienCharacter = getResizedBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.alien_legs_small), 300, 240);
+            characterAlien = new AlienObject (getRotatedBitmap(alienCharacter, 90));
+
             Bitmap bmp;
             Bitmap bmp2;
             int y;
@@ -133,12 +135,28 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             bmp = getResizedBitmap(BitmapFactory.decodeResource
                     (getResources(), R.drawable.robot), 500, Resources.getSystem().getDisplayMetrics().heightPixels / 2);
             bmp2 = getResizedBitmap
-                    (BitmapFactory.decodeResource(getResources(), R.drawable.rocket), 500, Resources.getSystem().getDisplayMetrics().heightPixels / 2);
+                    (BitmapFactory.decodeResource(getResources(), R.drawable.robot), 500, Resources.getSystem().getDisplayMetrics().heightPixels / 2);
+
 
             pipe1 = new ObstacleObject (bmp, bmp2, 2000, 100);
             pipe2 = new ObstacleObject (bmp, bmp2, 4500, 100);
             pipe3 = new ObstacleObject (bmp, bmp2, 3200, 100);
 
+        }
+
+        public Bitmap getRotatedBitmap(Bitmap bm, float degrees){
+
+            int width = bm.getWidth();
+            int height = bm.getHeight();
+
+            Matrix matrix = new Matrix();
+            matrix.postRotate(degrees);
+
+            Bitmap rotatedBitmap =
+                    Bitmap.createBitmap(bm, 0, 0, width, height, matrix, false);
+            bm.recycle();
+
+            return rotatedBitmap;
         }
 
         public Bitmap getResizedBitmap(Bitmap bm, int newWidth, int newHeight) {
@@ -224,9 +242,24 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         public void resetLevel() {
 
-            //Need to go back to the first activity.
-            //Finish the second activity and go back to the next screen
-            activity2.finish ();
+            if(score >= 500) {
+                // Any in game variables need to be remembered here
+                GameActivity.score = score;
+                activity2.finish();
+//                Intent openMainActivity= new Intent(this, MainActivity.class));
+//                openMainActivity.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+//                startActivityIfNeeded(openMainActivity, 0);
+            }
+
+            //resets level
+            characterAlien.y = 100;
+            pipe1.xX = 2000;
+            pipe1.yY = 0;
+            pipe2.xX = 4500;
+            pipe2.yY = 200;
+            pipe3.xX = 3200;
+            pipe3.yY = 250;
+            score = 0;
         }
 
     }
