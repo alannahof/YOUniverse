@@ -260,6 +260,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             pipe3.xX = 3200;
             pipe3.yY = 250;
             score = 0;
+
+            activity2.finish ();
         }
 
     }
