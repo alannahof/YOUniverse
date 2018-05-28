@@ -10,8 +10,7 @@ public class ObstacleObject {
         private Bitmap image2;
         public int xX, yY;
         private int xVelocity = 10;
-        private int screenHeight =
-                Resources.getSystem().getDisplayMetrics().heightPixels;
+        private int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
 
         public ObstacleObject (Bitmap bmp, Bitmap bmp2, int x, int y) {
             image = bmp;

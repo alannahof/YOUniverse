@@ -18,6 +18,9 @@ public class MainActivity extends Activity {
     public static String username;
     public static int selected_avatar;
 
+    public static int score;
+
+
     /**
      *
      * Will need to set up the shared preferences
