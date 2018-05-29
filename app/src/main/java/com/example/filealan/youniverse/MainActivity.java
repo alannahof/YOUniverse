@@ -45,24 +45,28 @@ public class MainActivity extends Activity {
         /**Retrieving the shared preferences and assigning them to the variables
         Default to null if nothing has been saved
         Ideally will be able to connect to the API and store this information in the database rather than in the application*/
-        username = all_preferences.getString ("username", null);
-        selected_avatar = all_preferences.getInt ("avatar", -1);
-        logged_in = all_preferences.getBoolean ("logged_in", FALSE);
-        score = all_preferences.getInt ("score", -1);
-        tokens = all_preferences.getInt ("tokens", -1);
 
-        //Will need to check if the user was logged in or not and take action based on that
-        if (logged_in){
-            //Do something
-            //Send to the map page or profile page depending on the team's decision
+        logged_in = all_preferences.getBoolean ("logged_in", FALSE);
+
+        //Only retrieve the remaining shared preferences if they are logged in.
+        if (logged_in) {
+            Log.d("Login", "Main Activity Login TRUE");
+            username = all_preferences.getString ("username", null);
+            Log.d("Login", "" + username);
+            selected_avatar = all_preferences.getInt ("avatar", -1);
+            Log.d("Login", "" + selected_avatar);
+            score = all_preferences.getInt ("score", -1);
+            Log.d("Login", "" + score);
+            tokens = all_preferences.getInt ("tokens", -1);
+            Log.d("Login", "" + tokens);
         } else {
-            //Send to login page R.layout.activity_main
+            Log.d("Login", "Main Activity Login FALSE");
         }
 
         //If savedInstanceState exists, will have saved the current layout
         if (savedInstanceState !=null){
-            //Check if the layout state was saved, if not set it back to the default map_progress_screen
-            MainActivity.layout_state = savedInstanceState.getInt("layout", R.layout.map_progress_screen);
+            //Check if the layout state was saved
+            MainActivity.layout_state = savedInstanceState.getInt ("layout", R.layout.profile_page);
         } else {
             MainActivity.layout_state = R.layout.activity_main;
         }
@@ -86,7 +90,6 @@ public class MainActivity extends Activity {
         //This is for when we resume the activity in-application
         //If you just finished the game then it will redirect you to the evaluation layout
         if (layout_state == 5) {
-            setContentView (R.layout.evaluation);
             ControlCentre.setLayout_EvaluationPage ();
         }
    }
