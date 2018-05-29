@@ -32,8 +32,6 @@ public class Instructions {
         });
     }
 
-
-
     public static Instructions getInstance(Activity act) {
         instance = new Instructions(act);
         return instance;

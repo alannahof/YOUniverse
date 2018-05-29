@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.filealan.youniverse.ControlCentre;
 import com.example.filealan.youniverse.MainActivity;
@@ -22,6 +23,9 @@ public class Evaluation_Page {
     }
 
     public void setEvaluationLayout(){
+
+        TextView points = (TextView) activity.findViewById(R.id.profile_points);
+        points.setText(MainActivity.score + " tokens");
 
         ImageView avatar = (ImageView) activity.findViewById (R.id.profile_avatar_placeholder);
         avatar.setImageResource (MainActivity.selected_avatar);

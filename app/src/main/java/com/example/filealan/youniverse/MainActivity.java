@@ -83,8 +83,14 @@ public class MainActivity extends Activity {
         super.onResume ();
         Log.d("Main", "OnResume");
 
+//        score = getIntent().getIntExtra("SCORE", score);
+        System.out.println("the score is... " + score);
+
+
+
         if (layout_state == 5) {
-            setContentView (R.layout.evaluation);
+//            setContentView (R.layout.evaluation);
+            ControlCentre.setLayout_EvaluationPage();
         }
         //REMEMBER IF YOU CAME FROM THE GAME SO YOU CAN REDIRECT TO APPROPRIATE LAYOUT
    }
