@@ -242,13 +242,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         public void resetLevel() {
 
-            if(score >= 500) {
+            if(score >= 100) {
                 // Any in game variables need to be remembered here
-                GameActivity.score = score;
-                activity2.finish();
-//                Intent openMainActivity= new Intent(this, MainActivity.class));
+                MainActivity.score = score;
+//                Intent openMainActivity= new Intent(this.activity2, MainActivity.class);
+////                openMainActivity.putExtra("SCORE", score);
 //                openMainActivity.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-//                startActivityIfNeeded(openMainActivity, 0);
+
+                activity2.finish();
             }
 
             //resets level
@@ -260,8 +261,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             pipe3.xX = 3200;
             pipe3.yY = 250;
             score = 0;
-
-            activity2.finish ();
         }
 
     }

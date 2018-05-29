@@ -83,11 +83,17 @@ public class MainActivity extends Activity {
         super.onResume ();
         Log.d("Main", "OnResume");
 
+
+//        score = getIntent().getIntExtra("SCORE", score);
+        System.out.println("the score is... " + score);
+
+
         //This is for when we resume the activity in-application
         //If you just finished the game then it will redirect you to the evaluation layout
         if (layout_state == 5) {
-            setContentView (R.layout.evaluation);
+            
             ControlCentre.setLayout_EvaluationPage ();
+
         }
    }
 
