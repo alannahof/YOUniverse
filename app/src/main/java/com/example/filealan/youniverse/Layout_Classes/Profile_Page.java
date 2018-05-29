@@ -48,7 +48,7 @@ public class Profile_Page {
         TextView profile_points = (TextView) activity.findViewById (R.id.profile_points);
         ImageView selectAvatar = (ImageView)activity.findViewById(R.id.avatarSelection);
 
-        profile_points.setText(GameActivity.score + "tokens");
+//        profile_points.setText(GameActivity.score + "tokens");
 
         profile_settings.setOnClickListener (new View.OnClickListener () {
             @Override

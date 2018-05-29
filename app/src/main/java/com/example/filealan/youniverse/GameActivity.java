@@ -10,7 +10,7 @@ import com.example.filealan.youniverse.Game_Classes.GameView;
 
 public class GameActivity extends Activity {
 
-    public static int score;
+//    public static int score;
 
 
     @Override
