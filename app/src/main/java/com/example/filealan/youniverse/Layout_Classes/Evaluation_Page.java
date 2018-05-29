@@ -1,12 +1,14 @@
 package com.example.filealan.youniverse.Layout_Classes;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.filealan.youniverse.ControlCentre;
+import com.example.filealan.youniverse.GameActivity;
 import com.example.filealan.youniverse.MainActivity;
 import com.example.filealan.youniverse.R;
 
@@ -24,17 +26,24 @@ public class Evaluation_Page {
 
     public void setEvaluationLayout(){
 
+
         TextView points = (TextView) activity.findViewById(R.id.profile_points);
         points.setText(MainActivity.score + " tokens");
 
+        Log.d ("Button", "Inside Set Layout");
         ImageView avatar = (ImageView) activity.findViewById (R.id.profile_avatar_placeholder);
         avatar.setImageResource (MainActivity.selected_avatar);
 
-        ImageView goToProfile = (ImageView)activity.findViewById(R.id.profile_settings_button);
-        goToProfile.setOnClickListener(new View.OnClickListener() {
+        ImageView profile_settings = (ImageView)activity.findViewById (R.id.profile_settings_button2);
+
+        Log.d ("Button", "Code right before the click");
+
+        profile_settings.setOnClickListener (new View.OnClickListener () {
             @Override
-            public void onClick(View view) {
-                ControlCentre.setLayout_ProfilePage();
+            public void onClick(View v) {
+                Log.d ("Button", "You Just Clicked");
+                //Go to the settings page once clicked
+                ControlCentre.setLayout_SettingsPage ();
             }
         });
 

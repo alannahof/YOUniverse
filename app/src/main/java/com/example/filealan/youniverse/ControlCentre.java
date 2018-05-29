@@ -25,7 +25,9 @@ public class ControlCentre {
      * Set layout from memory, defaults to activity main if no other layout remembered
      */
     public void setLayout(){
-        //If statement or switch between the different layouts
+
+        //When initialising the application, will look at the Saved Instance State
+        //After the game and within the application this constructor is not called, so layout set in onResume (Main Activity)
         if (MainActivity.layout_state == R.layout.activity_main){
             Log.d ("Test", "Control Centre - Constructor - Main Activity");
             setLayout_MainLoginPage ();
@@ -42,14 +44,12 @@ public class ControlCentre {
         } else if (MainActivity.layout_state == R.layout.alien_guide){
             setLayout_AlienGuide();
         } else if (MainActivity.layout_state == R.layout.layout) {
+            //This is the instruction layout
             setLayout_layout();
         }else if (MainActivity.layout_state == R.layout.evaluation){
             setLayout_EvaluationPage();
-        }else {
-            //setLayout_GamePage ();
         }
     }
-
     /**
      * Method defined to set the layout and manage the UI for the Main Signup Class
      * Constructor is called with 'getInstance' method
