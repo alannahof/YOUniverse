@@ -11,6 +11,8 @@ import com.example.filealan.youniverse.ControlCentre;
 import com.example.filealan.youniverse.MainActivity;
 import com.example.filealan.youniverse.R;
 
+import static java.lang.Boolean.TRUE;
+
 public class Main_SignIn_Page {
 
     private static Main_SignIn_Page instance = null;
@@ -64,6 +66,8 @@ public class Main_SignIn_Page {
 
                     //Set up what needs to be done. User name checked, password checked, etc etc
                     MainActivity.username = user_name;
+                    MainActivity.logged_in = TRUE;
+                    Log.d("Login", "Login TRUE");
                     ControlCentre.setLayout_ProfilePage ();
                 }
             }

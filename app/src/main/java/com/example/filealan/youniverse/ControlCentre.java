@@ -26,29 +26,33 @@ public class ControlCentre {
      */
     public void setLayout(){
 
-        //When initialising the application, will look at the Saved Instance State
-        //After the game and within the application this constructor is not called, so layout set in onResume (Main Activity)
-        if (MainActivity.layout_state == R.layout.activity_main){
-            Log.d ("Test", "Control Centre - Constructor - Main Activity");
+        //When initialising the application, has looked at whether there was a Saved Instance State (session)
+        //After the game and within the application (switching activities) this method is not called, so layout set in onResume (Main Activity)
+
+        if(MainActivity.logged_in){
+
+            //Then you want to go back to the last layout remembered or default to the map screen
+            if (MainActivity.layout_state == R.layout.profile_page){
+                setLayout_ProfilePage ();
+            } else if (MainActivity.layout_state == R.layout.avatar_selection){
+                setLayout_AvatarPage();
+            } else if (MainActivity.layout_state == R.layout.setting_screen) {
+                setLayout_SettingsPage();
+            } else if (MainActivity.layout_state == R.layout.alien_guide){
+                setLayout_AlienGuide();
+            } else if (MainActivity.layout_state == R.layout.layout) {
+                //This is the instruction layout
+                setLayout_layout();
+            }else if (MainActivity.layout_state == R.layout.evaluation){
+                setLayout_EvaluationPage();
+            } else {
+                setLayout_ProfilePage ();
+            }
+
+        } else {
             setLayout_MainLoginPage ();
-        } else if (MainActivity.layout_state == R.layout.profile_page){
-            setLayout_ProfilePage ();
-        } else if (MainActivity.layout_state == R.layout.avatar_selection){
-            setLayout_AvatarPage();
-        } else if (MainActivity.layout_state == R.layout.setting_screen) {
-            setLayout_SettingsPage();
-        } else if (MainActivity.layout_state == R.layout.sign_up) {
-            setLayout_SignUpPage();
-        } else if (MainActivity.layout_state == R.layout.map_progress_screen){
-            setLayout_MapPage();
-        } else if (MainActivity.layout_state == R.layout.alien_guide){
-            setLayout_AlienGuide();
-        } else if (MainActivity.layout_state == R.layout.layout) {
-            //This is the instruction layout
-            setLayout_layout();
-        }else if (MainActivity.layout_state == R.layout.evaluation){
-            setLayout_EvaluationPage();
         }
+
     }
     /**
      * Method defined to set the layout and manage the UI for the Main Signup Class

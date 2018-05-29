@@ -40,12 +40,12 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/profile_settings_button"
+            android:id="@+id/profile_settings_button2"
             android:layout_width="35dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
-            android:onClick="goToSettings"
-            android:src="?android:attr/textSelectHandle"/>
+            android:clickable="true"
+            android:src="?android:attr/textSelectHandle" />
 
         <TextView
             android:id="@+id/profile_points"
