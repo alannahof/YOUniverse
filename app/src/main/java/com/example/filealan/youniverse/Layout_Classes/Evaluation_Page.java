@@ -27,25 +27,15 @@ public class Evaluation_Page {
     public void setEvaluationLayout(){
 
 
-        TextView points = (TextView) activity.findViewById(R.id.profile_points);
+        TextView points = (TextView) activity.findViewById(R.id.tokens_footer);
         points.setText(MainActivity.score + " tokens");
 
         Log.d ("Button", "Inside Set Layout");
         ImageView avatar = (ImageView) activity.findViewById (R.id.profile_avatar_placeholder);
+
+        ControlCentre.setLayout_FooterPage ();
+
         avatar.setImageResource (MainActivity.selected_avatar);
-
-        ImageView profile_settings = (ImageView)activity.findViewById (R.id.profile_settings_button2);
-
-        Log.d ("Button", "Code right before the click");
-
-        profile_settings.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-                Log.d ("Button", "You Just Clicked");
-                //Go to the settings page once clicked
-                ControlCentre.setLayout_SettingsPage ();
-            }
-        });
 
     }
 

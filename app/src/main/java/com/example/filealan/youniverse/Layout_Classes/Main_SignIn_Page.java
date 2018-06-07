@@ -1,8 +1,10 @@
 package com.example.filealan.youniverse.Layout_Classes;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -68,8 +70,16 @@ public class Main_SignIn_Page {
                     MainActivity.username = user_name;
                     MainActivity.logged_in = TRUE;
                     Log.d("Login", "Login TRUE");
+                    MainActivity.selected_avatar = R.drawable.astronaut_avatar;
+                    ControlCentre.setLayout_FooterPage ();
                     ControlCentre.setLayout_ProfilePage ();
+
+                    //This will minimise the keyboard after they entered the text in the edit text and pressed proceed
+                    InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
                 }
+
+
             }
         });
     }
