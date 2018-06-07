@@ -39,37 +39,37 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         Log.d("Main", "OnCreate");
 
-        //Mode 0 is MODE_PRIVATE. Means only this application can access and read/write by the calling application
-        SharedPreferences all_preferences = getSharedPreferences ("all_preferences", 0);
-
-        /**Retrieving the shared preferences and assigning them to the variables
-        Default to null if nothing has been saved
-        Ideally will be able to connect to the API and store this information in the database rather than in the application*/
-
-        logged_in = all_preferences.getBoolean ("logged_in", FALSE);
-
-        //Only retrieve the remaining shared preferences if they are logged in.
-        if (logged_in) {
-            Log.d("Login", "Main Activity Login TRUE");
-            username = all_preferences.getString ("username", null);
-            Log.d("Login", "" + username);
-            selected_avatar = all_preferences.getInt ("avatar", -1);
-            Log.d("Login", "" + selected_avatar);
-            score = all_preferences.getInt ("score", -1);
-            Log.d("Login", "" + score);
-            tokens = all_preferences.getInt ("tokens", -1);
-            Log.d("Login", "" + tokens);
-        } else {
-            Log.d("Login", "Main Activity Login FALSE");
-        }
-
-        //If savedInstanceState exists, will have saved the current layout
-        if (savedInstanceState !=null){
-            //Check if the layout state was saved
-            MainActivity.layout_state = savedInstanceState.getInt ("layout", R.layout.profile_page);
-        } else {
-            MainActivity.layout_state = R.layout.activity_main;
-        }
+//        //Mode 0 is MODE_PRIVATE. Means only this application can access and read/write by the calling application
+//        SharedPreferences all_preferences = getSharedPreferences ("all_preferences", 0);
+//
+//        /**Retrieving the shared preferences and assigning them to the variables
+//        Default to null if nothing has been saved
+//        Ideally will be able to connect to the API and store this information in the database rather than in the application*/
+//
+//        logged_in = all_preferences.getBoolean ("logged_in", FALSE);
+//
+//        //Only retrieve the remaining shared preferences if they are logged in.
+//        if (logged_in) {
+//            Log.d("Login", "Main Activity Login TRUE");
+//            username = all_preferences.getString ("username", null);
+//            Log.d("Login", "" + username);
+//            selected_avatar = all_preferences.getInt ("avatar", -1);
+//            Log.d("Login", "" + selected_avatar);
+//            score = all_preferences.getInt ("score", -1);
+//            Log.d("Login", "" + score);
+//            tokens = all_preferences.getInt ("tokens", -1);
+//            Log.d("Login", "" + tokens);
+//        } else {
+//            Log.d("Login", "Main Activity Login FALSE");
+//        }
+//
+//        //If savedInstanceState exists, will have saved the current layout
+//        if (savedInstanceState !=null){
+//            //Check if the layout state was saved
+//            MainActivity.layout_state = savedInstanceState.getInt ("layout", R.layout.profile_page);
+//        } else {
+//            MainActivity.layout_state = R.layout.activity_main;
+//        }
 
         //Initialises the control centre and sets the layout
         control = ControlCentre.getInstance (this);
@@ -113,14 +113,14 @@ public class MainActivity extends Activity {
     protected void onPause() {
         super.onPause ();
         Log.d("Main", "OnPause");
-        SharedPreferences all_preferences = getSharedPreferences ("all_preferences", 0);
-        SharedPreferences.Editor allpref_editor = all_preferences.edit ();
-        allpref_editor.putString ("username", username);
-        allpref_editor.putInt ("avatar", selected_avatar);
-        allpref_editor.putBoolean ("logged_in", logged_in);
-        allpref_editor.putInt ("score", score);
-        allpref_editor.putInt ("tokens", tokens);
-        allpref_editor.commit ();
+//        SharedPreferences all_preferences = getSharedPreferences ("all_preferences", 0);
+//        SharedPreferences.Editor allpref_editor = all_preferences.edit ();
+//        allpref_editor.putString ("username", username);
+//        allpref_editor.putInt ("avatar", selected_avatar);
+//        allpref_editor.putBoolean ("logged_in", logged_in);
+//        allpref_editor.putInt ("score", score);
+//        allpref_editor.putInt ("tokens", tokens);
+//        allpref_editor.commit ();
     }
 
     @Override
