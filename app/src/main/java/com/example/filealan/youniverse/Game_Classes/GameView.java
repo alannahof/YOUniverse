@@ -144,6 +144,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             }
         }
 
+        //work
+
         public void drawButtons(Canvas canvas){
 
         }
