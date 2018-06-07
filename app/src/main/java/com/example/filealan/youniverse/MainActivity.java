@@ -88,7 +88,6 @@ public class MainActivity extends Activity {
         Log.d("Main", "OnResume");
 
 
-//        score = getIntent().getIntExtra("SCORE", score);
         System.out.println("the score is... " + score);
 
 
