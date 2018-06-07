@@ -14,6 +14,7 @@ import com.example.filealan.youniverse.MainActivity;
 import com.example.filealan.youniverse.R;
 
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class Avatar_Selection_Page {
 
@@ -83,6 +84,9 @@ public class Avatar_Selection_Page {
         avatar_next_button.setRotation (180);
 
         final Button avatar_ready = (Button) activity.findViewById (R.id.avatar_button_ready);
+        final Button avatar_cancel = (Button) activity.findViewById (R.id.avatar_button_cancel);
+
+        ControlCentre.setLayout_FooterPage ();
 
         avatar_image.setImageResource (avatars.get(currentListIndex));
 
@@ -115,6 +119,16 @@ public class Avatar_Selection_Page {
             }
         });
 
+        avatar_cancel.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                if (MainActivity.selected_avatar > 0 ){
+                    ControlCentre.setLayout_SettingsPage ();
+                } else {
+                    //You can't cancel because you didn't pick an avatar yet
+                }
+            }
+        });
     }
 
     /**

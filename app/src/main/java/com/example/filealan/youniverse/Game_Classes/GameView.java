@@ -262,9 +262,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
             if (pipe1.xX + 500 < 0) {
                 Random r = new Random();
+
                 //figure out what nextInt is & bound
                 int value1 = r.nextInt(500)-1000;
                 int value2 = r.nextInt(500);
+
                 pipe1.xX = screenWidth + value1 + 1000;
                 pipe1.yY = value2 - 250;
             }
@@ -272,7 +274,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             if (pipe2.xX + 500 < 0) {
                 Random r = new Random();
                 int value1 = r.nextInt(500)-1000;
+
                 int value2 = r.nextInt(500);
+
                 pipe2.xX = screenWidth + value1 + 1000;
                 pipe2.yY = value2 - 250;
             }
@@ -280,7 +284,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             if (pipe3.xX + 500 < 0) {
                 Random r = new Random();
                 int value1 = r.nextInt(500)-1000;
+
                 int value2 = r.nextInt(500);
+
                 pipe3.xX = screenWidth + value1 + 1000;
                 pipe3.yY = value2 - 250;
             }

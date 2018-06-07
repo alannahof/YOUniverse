@@ -44,27 +44,9 @@ public class Profile_Page {
         TextView profile_level2 = (TextView) activity.findViewById (R.id.profile_level2);
         TextView profile_level3 = (TextView) activity.findViewById (R.id.profile_level3);
 
-        ImageView profile_settings = (ImageView)activity.findViewById (R.id.profile_settings_button);
         TextView profile_points = (TextView) activity.findViewById (R.id.profile_points);
-        ImageView selectAvatar = (ImageView)activity.findViewById(R.id.avatarSelection);
 
-//        profile_points.setText(GameActivity.score + "tokens");
-
-        profile_settings.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-                //Go to the settings page once clicked
-                ControlCentre.setLayout_SettingsPage ();
-            }
-        });
-
-        selectAvatar.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-                //Go to avatar customisation screen once clicked
-                ControlCentre.setLayout_AvatarPage ();
-            }
-        });
+        ControlCentre.setLayout_FooterPage ();
     }
 
 
