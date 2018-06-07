@@ -5,67 +5,137 @@
     android:id="@+id/overall_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/space_theme"
     android:orientation="vertical">
 
 
     <TextView
         android:id="@+id/settings_title"
-        tools:fontFamily="@font/acme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
         android:baselineAligned="false"
+        android:gravity="center"
         android:paddingTop="20dp"
         android:text="YOUniverse"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:fontFamily="@font/acme" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/change_name"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/acme"
+        android:text="Change Username"
+        android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="Change Name" />
+    <EditText
+        android:id="@+id/change_my_name"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/acme"
+        android:hint="Enter Name Here"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
 
-        <Button
-            android:id="@+id/settings_name_change"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Queen A" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/settings_name_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/acme"
+        android:text="Change"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Change Avatar" />
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/acme"
+        android:text="Change Avatar"
+        android:textSize="24sp" />
 
     <ImageButton
         android:id="@+id/settings_avatar_change"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_width="148dp"
+        android:layout_height="130dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
+        android:id="@+id/Logout_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Change Background" />
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/acme"
+        android:text="Logout"
+        android:textSize="24sp" />
 
     <Button
-        android:id="@+id/settings_background_change"
-        android:layout_width="match_parent"
+        android:id="@+id/settings_logout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Different Stars" />
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/acme"
+        android:text="Logout"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:baselineAligned="false"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/settings_footer"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:clickable="true"
+            android:src="@android:drawable/ic_menu_preferences" />
+
+        <ImageView
+            android:id="@+id/profile_footer"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:adjustViewBounds="true"
+            android:onClick="selectAvatar"
+            android:scaleType="fitCenter"
+            android:src="@drawable/alien_guide" />
+
+        <ImageView
+            android:id="@+id/back_map_footer"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:adjustViewBounds="true"
+            android:onClick="selectAvatar"
+            android:scaleType="fitCenter"
+            android:src="@drawable/strineo" />
+
+        <TextView
+            android:id="@+id/tokens_footer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/acme"
+            android:gravity="right"
+            android:text="200 tokens"
+            android:textSize="30sp" />
+    </LinearLayout>
 
 </LinearLayout>

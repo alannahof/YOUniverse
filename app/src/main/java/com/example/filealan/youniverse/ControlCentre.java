@@ -6,6 +6,7 @@ import android.util.Log;
 import com.example.filealan.youniverse.Layout_Classes.Alien_Guide_Page;
 import com.example.filealan.youniverse.Layout_Classes.Avatar_Selection_Page;
 import com.example.filealan.youniverse.Layout_Classes.Evaluation_Page;
+import com.example.filealan.youniverse.Layout_Classes.Footer_Page;
 import com.example.filealan.youniverse.Layout_Classes.Instructions;
 import com.example.filealan.youniverse.Layout_Classes.Main_SignIn_Page;
 import com.example.filealan.youniverse.Layout_Classes.Map_Page;
@@ -28,6 +29,8 @@ public class ControlCentre {
 
         //When initialising the application, has looked at whether there was a Saved Instance State (session)
         //After the game and within the application (switching activities) this method is not called, so layout set in onResume (Main Activity)
+
+        //Set up the footer page regardless of where you came from
 
         if(MainActivity.logged_in){
 
@@ -100,14 +103,11 @@ public class ControlCentre {
 
     public static void setLayout_MapPage(){
         Map_Page mappage = Map_Page.getInstance(act);
-
     }
 
-
-    //public static void setLayout_GamePage(){
-        //Game_Page mappage = Game_Page.getInstance(act);
-
-    //}
+    public static void setLayout_FooterPage(){
+        Footer_Page footerpage = Footer_Page.getInstance(act);
+    }
 
     public static void setLayout_AlienGuide(){
         Alien_Guide_Page alienguide = Alien_Guide_Page.getInstance(act);

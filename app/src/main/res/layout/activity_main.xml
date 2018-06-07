@@ -45,9 +45,11 @@
                 android:id="@+id/userNameField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
                 android:hint="Username"
                 android:inputType="textPersonName"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/passwordField"
@@ -55,9 +57,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/acme"
                 android:gravity="center"
                 android:hint="Password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/proceedButton"
@@ -67,9 +71,11 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/acme"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:text="Proceed" />
+                android:text="Proceed"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <TextView
@@ -78,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:clickable="true"
+            android:fontFamily="@font/acme"
             android:text="Not a member? Sign up "
             android:textColor="@android:color/holo_orange_light"
             android:textSize="16sp"

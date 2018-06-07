@@ -40,15 +40,6 @@ public class Map_Page {
             }
         });
 
-
-
-
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ControlCentre.setLayout_ProfilePage();
-            }
-        });
     }
 
 
