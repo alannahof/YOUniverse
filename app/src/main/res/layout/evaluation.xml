@@ -17,6 +17,15 @@
         android:textStyle="bold"
         tools:fontFamily="@font/acme" />
 
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Score Place Holder"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
     <ImageView
         android:id="@+id/profile_avatar_placeholder"
         android:layout_width="match_parent"

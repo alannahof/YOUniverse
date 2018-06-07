@@ -27,8 +27,8 @@ public class Evaluation_Page {
     public void setEvaluationLayout(){
 
 
-        TextView points = (TextView) activity.findViewById(R.id.profile_points);
-        points.setText(MainActivity.score + " tokens");
+        TextView points = (TextView) activity.findViewById(R.id.scoreText);
+        points.setText("You got " + MainActivity.score + " points!");
 
         Log.d ("Button", "Inside Set Layout");
         ImageView avatar = (ImageView) activity.findViewById (R.id.profile_avatar_placeholder);

@@ -33,6 +33,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         private AlienObject characterAlien;
         public ObstacleObject pipe1, pipe2, pipe3;
+        public ButtonObject leftButton, rightButton;
         public int score = 0;
         public static int gapHeight = 600;
         public static int velocity = 10;
@@ -55,12 +56,38 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
 
         @Override
-        public boolean onTouchEvent(MotionEvent event)
-        {
-            characterAlien.y = characterAlien.y - (characterAlien.yVelocity * 10);
+        public boolean onTouchEvent(MotionEvent event) {
+
+            int x = (int) event.getX();
+            int y = (int) event.getY();
+            System.out.println("X= " + x + " Y= " + y);
+
+            if(MatchLeftPixels(y)){
+                characterAlien.y = characterAlien.y - (characterAlien.yVelocity * 10);
+                return true;
+            }
+
+            if(MatchRightPixels(y)){
+                characterAlien.y = characterAlien.y + (characterAlien.yVelocity * 10);
+                return true;
+            }
+
             return super.onTouchEvent(event);
         }
 
+        private boolean MatchLeftPixels(int y){
+            if(y > 0 && y < screenHeight/2){
+                return true;
+            }
+            return false;
+        }
+
+        private boolean MatchRightPixels(int y){
+            if(y > screenHeight/2 && y < screenHeight){
+                return true;
+            }
+            return false;
+        }
 
         @Override
         public void surfaceCreated(SurfaceHolder holder) {
@@ -103,23 +130,32 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             super.draw(canvas);
             if(canvas!=null) {
 
+//                Bitmap space = getResizedBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.space_theme), screenHeight, screenWidth);
+//                Bitmap background = getRotatedBitmap(space, 90);
+//                canvas.drawBitmap (background, 0,0,null);
+
                 canvas.drawRGB (72,61,139);
                 characterAlien.draw(canvas);
                 pipe1.draw(canvas);
                 pipe2.draw(canvas);
                 pipe3.draw(canvas);
                 drawScore(canvas);
+                leftButton.draw(canvas);
             }
+        }
+
+        public void drawButtons(Canvas canvas){
+
         }
 
         public void drawScore(Canvas canvas) {
             Paint paint = new Paint();
             paint.setColor(Color.WHITE);
             paint.setStyle(Paint.Style.FILL);
-            paint.setTextSize(50);
+            paint.setTextSize(100);
             paint.setTextAlign(Paint.Align.LEFT);
             canvas.rotate(90);
-            canvas.drawText("Score: " + score, 30, -50, paint);
+            canvas.drawText("Score: " + score, 30, -screenWidth+100, paint);
             canvas.restore();
         }
 
@@ -137,10 +173,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             bmp2 = getResizedBitmap
                     (BitmapFactory.decodeResource(getResources(), R.drawable.robot), 500, Resources.getSystem().getDisplayMetrics().heightPixels / 2);
 
+            Bitmap arrowButton;
+            arrowButton = getResizedBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.game_arrow), 300, 240);
 
             pipe1 = new ObstacleObject (bmp, bmp2, 2000, 100);
             pipe2 = new ObstacleObject (bmp, bmp2, 4500, 100);
             pipe3 = new ObstacleObject (bmp, bmp2, 3200, 100);
+
+            leftButton = new ButtonObject(arrowButton, 50, 100);
 
         }
 
@@ -215,9 +255,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
             //If the pipe goes off the left of the screen,
             //put it forward at a randomized distance and height
+
+            //added -1000 to make pipes not spawn too close together
+
             if (pipe1.xX + 500 < 0) {
                 Random r = new Random();
-                int value1 = r.nextInt(500);
+                //figure out what nextInt is & bound
+                int value1 = r.nextInt(500)-1000;
                 int value2 = r.nextInt(500);
                 pipe1.xX = screenWidth + value1 + 1000;
                 pipe1.yY = value2 - 250;
@@ -225,7 +269,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
             if (pipe2.xX + 500 < 0) {
                 Random r = new Random();
-                int value1 = r.nextInt(500);
+                int value1 = r.nextInt(500)-1000;
                 int value2 = r.nextInt(500);
                 pipe2.xX = screenWidth + value1 + 1000;
                 pipe2.yY = value2 - 250;
@@ -233,7 +277,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
             if (pipe3.xX + 500 < 0) {
                 Random r = new Random();
-                int value1 = r.nextInt(500);
+                int value1 = r.nextInt(500)-1000;
                 int value2 = r.nextInt(500);
                 pipe3.xX = screenWidth + value1 + 1000;
                 pipe3.yY = value2 - 250;
@@ -242,12 +286,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         public void resetLevel() {
 
-            if(score >= 100) {
+            if(score >= 500) {
                 // Any in game variables need to be remembered here
                 MainActivity.score = score;
 //                Intent openMainActivity= new Intent(this.activity2, MainActivity.class);
-////                openMainActivity.putExtra("SCORE", score);
+//                openMainActivity.putExtra("SCORE", score);
 //                openMainActivity.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+
+//                I/System.out: Screen Width= 2392 Screen Height= 1440
 
                 activity2.finish();
             }
