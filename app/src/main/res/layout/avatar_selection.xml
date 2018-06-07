@@ -5,7 +5,7 @@
     android:id="@+id/overall_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/space_theme"
+    android:background="@drawable/space_theme2"
     android:orientation="vertical">
 
 
@@ -44,7 +44,7 @@
             android:layout_marginBottom="30dp"
             android:layout_marginTop="30dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/astronaut_avatar" />
+            android:src="@drawable/avatar_6" />
 
         <ImageView
             android:id="@+id/avatar_button_next"

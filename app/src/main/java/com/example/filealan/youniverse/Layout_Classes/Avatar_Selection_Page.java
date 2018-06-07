@@ -39,12 +39,11 @@ public class Avatar_Selection_Page {
     public ArrayList<Integer> avatarArray(){
         avatars = new ArrayList<Integer> ();
         avatars.add (R.drawable.avatar_1);
-        avatars.add (R.drawable.green_alien_antenna);
-        avatars.add (R.drawable.robot);
-        avatars.add (R.drawable.alien_legs_big);
-        avatars.add (R.drawable.green_alien_face);
+        avatars.add (R.drawable.avatar_3);
+        avatars.add (R.drawable.avatar_5);
         avatars.add (R.drawable.avatar_2);
-        avatars.add (R.drawable.worldwide);
+        avatars.add (R.drawable.avatar_4);
+        avatars.add(R.drawable.avatar_6);
         return avatars;
     }
 
