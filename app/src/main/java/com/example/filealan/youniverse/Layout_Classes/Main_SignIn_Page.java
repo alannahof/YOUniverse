@@ -67,11 +67,15 @@ public class Main_SignIn_Page {
                 } else {
 
                     //Set up what needs to be done. User name checked, password checked, etc etc
-                    MainActivity.username = user_name;
+                    MainActivity.getPatientApi(activity, user_name);
+
+                    //Check if user exists & password matches
+
                     MainActivity.logged_in = TRUE;
+                    MainActivity.username = MainActivity.user.getUsername();
+                    MainActivity.selected_avatar = MainActivity.user.getSelected_avatar();
+
                     Log.d("Login", "Login TRUE");
-                    MainActivity.selected_avatar = R.drawable.astronaut_avatar;
-                    ControlCentre.setLayout_FooterPage ();
                     ControlCentre.setLayout_ProfilePage ();
 
                     //This will minimise the keyboard after they entered the text in the edit text and pressed proceed
