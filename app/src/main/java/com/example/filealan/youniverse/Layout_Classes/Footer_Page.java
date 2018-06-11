@@ -32,6 +32,7 @@ public class Footer_Page {
         if (MainActivity.selected_avatar == 0) {
             footer.setVisibility (View.INVISIBLE);
         } else {
+
             settings.setOnClickListener (new View.OnClickListener () {
                 @Override
                 public void onClick(View v) {

@@ -5,12 +5,18 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.filealan.youniverse.API_Classes.API_Client;
+import com.example.filealan.youniverse.API_Classes.IUserAsyncResponse;
+import com.example.filealan.youniverse.API_Classes.User_Object;
+import com.google.gson.Gson;
+
 import static java.lang.Boolean.FALSE;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements IUserAsyncResponse {
 
     /**In-application variables*/
     public static ControlCentre control;
+    public static User_Object user;
 
     /**
      * Variables to be stored THROUGH-SESSIONS, i.e. persistent data that exists even when user closes application
@@ -71,6 +77,13 @@ public class MainActivity extends Activity {
 //            MainActivity.layout_state = R.layout.activity_main;
 //        }
 
+        Log.d("Avatars", R.drawable.avatar_1 + " av 1");
+        Log.d("Avatars", R.drawable.avatar_2 + " av 2");
+        Log.d("Avatars", R.drawable.avatar_3 + " av 3");
+        Log.d("Avatars", R.drawable.avatar_4 + " av 4");
+        Log.d("Avatars", R.drawable.avatar_5 + " av 5");
+        Log.d("Avatars", R.drawable.avatar_6 + " av 6");
+
         //Initialises the control centre and sets the layout
         control = ControlCentre.getInstance (this);
         control.setLayout ();
@@ -130,6 +143,33 @@ public class MainActivity extends Activity {
         //Save the session variable layout state in the save instance state
         outState.putInt("layout", MainActivity.layout_state);
         super.onSaveInstanceState (outState);
+    }
+
+    @Override
+    public void processFinish(User_Object output) {
+
+        user = output;
+
+        // Serialize Patient and save to shared preferences
+//        Gson gson = new Gson();
+//        String user_json = gson.toJson(user, User_Object.class);
+//        SharedPreferences all_preferences = getSharedPreferences("all_preferences", 0);
+//        SharedPreferences.Editor allprefEditor = all_preferences.edit();
+//
+//        //Save the asynchronous objects in the corresponding SharedPreferences
+//        allprefEditor.putString("user", user_json);
+//        allprefEditor.commit();
+    }
+
+    public static void getPatientApi(Activity act, String user_name) {
+        API_Client apiClient = API_Client.getInstance(act, user);
+        apiClient.apiGetUser(user_name);
+
+    }
+
+    public static void putPatientApi(Activity act, User_Object user) {
+        API_Client apiClient = API_Client.getInstance(act, user);
+        apiClient.apiPutUser(user);
     }
 
 
