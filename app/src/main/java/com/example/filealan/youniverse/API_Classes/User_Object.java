@@ -7,6 +7,9 @@ public class User_Object {
 
 
 
+
+    @SerializedName("_id")
+    User_Id id;
     @SerializedName("username")
     String username;
     @SerializedName("hash")
@@ -76,5 +79,13 @@ public class User_Object {
 
     public void setSalt(String salt) {
         this.salt = salt;
+    }
+
+    public User_Id getId() {
+        return id;
+    }
+
+    public void setId(User_Id id) {
+        this.id = id;
     }
 }

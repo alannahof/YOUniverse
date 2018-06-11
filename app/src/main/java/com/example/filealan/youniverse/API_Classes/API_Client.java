@@ -40,20 +40,21 @@ public class API_Client implements IAPIClient {
     }
 
     @Override
-    public void apiPutUser(User_Object patient) {
-//
-//            String url = apiBaseUrl + "/"; //Add the ending of the URL if changed
-//
-//        //Instantiate new instance of ApiPutDetailRequest Class
-//        API_PutUser putDetail = new API_PutUser ((IUserAsyncResponse) mainActivity, mainActivity, patient);
-//
-//        try {
-//            putDetail.execute(url).get();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        } catch (ExecutionException e) {
-//            e.printStackTrace();
-//        }
+    public void apiPutUser(User_Object user) {
+
+        String url = apiBaseUrl + "/user/" + user.getUsername(); //Add the ending of the URL if changed
+        Log.d("API", url);
+
+        //Instantiate new instance of ApiPutDetailRequest Class
+        API_PutUser putDetail = new API_PutUser ((IUserAsyncResponse) mainActivity, mainActivity, user);
+
+        try {
+            putDetail.execute(url).get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
     }
 }
 

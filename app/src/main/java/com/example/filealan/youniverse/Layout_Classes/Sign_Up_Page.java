@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.filealan.youniverse.API_Classes.User_Object;
 import com.example.filealan.youniverse.ControlCentre;
 import com.example.filealan.youniverse.MainActivity;
 import com.example.filealan.youniverse.R;
@@ -32,6 +33,7 @@ public Sign_Up_Page(Activity act){
      * Set up the buttons and layout of the profile page
      */
 public void setSignUpLayout(){
+
     final EditText signUp_userName = (EditText)activity.findViewById(R.id.signUp_userName);
     final EditText signUp_password  = (EditText)activity.findViewById(R.id.pword_signup);
     final EditText signUp_email  = (EditText)activity.findViewById(R.id.emailAddress_signup);
@@ -52,8 +54,12 @@ public void setSignUpLayout(){
             if (user_name.equals("") || user_name.equals (null)){
                 //Tell the user that they didn't enter anything
             } else {
-                MainActivity.username = user_name;
-                ControlCentre.setLayout_AvatarPage ();
+
+                MainActivity.user = new User_Object(user_name,password,2131230821,0,0,"test");
+
+               MainActivity.putPatientApi(activity, MainActivity.user);
+
+               ControlCentre.setLayout_MainLoginPage ();
             }
         }
     });
