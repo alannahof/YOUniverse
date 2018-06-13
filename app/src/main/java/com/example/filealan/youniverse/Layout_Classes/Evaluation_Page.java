@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,18 +27,24 @@ public class Evaluation_Page {
 
     public void setEvaluationLayout(){
 
-
+        Button next = (Button) activity.findViewById(R.id.evaluation_next);
 
         TextView points = (TextView) activity.findViewById(R.id.scoreText);
         points.setText("You got " + MainActivity.score + " points!");
 
-
         Log.d ("Button", "Inside Set Layout");
-        ImageView avatar = (ImageView) activity.findViewById (R.id.profile_avatar_placeholder);
+        ImageView avatar = (ImageView) activity.findViewById (R.id.evaluation_avatar);
 
         ControlCentre.setLayout_FooterPage ();
 
         avatar.setImageResource (MainActivity.selected_avatar);
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ControlCentre.setLayout_MapPage();
+            }
+        });
 
     }
 

@@ -1,10 +1,7 @@
 package com.example.filealan.youniverse.Game_Classes;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,14 +9,10 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.os.Build;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-import com.example.filealan.youniverse.ControlCentre;
-import com.example.filealan.youniverse.GameActivity;
 import com.example.filealan.youniverse.MainActivity;
 import com.example.filealan.youniverse.R;
 
@@ -32,10 +25,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         Activity activity2;
 
         private AlienObject characterAlien;
+        CatchObjects privacy1, privacy2, security1, security2;
         public ObstacleObject pipe1, pipe2, pipe3;
         public ButtonObject leftButton, rightButton;
         public int score = 0;
-        public static int gapHeight = 600;
+        public static int gapHeight = 800;
         public static int velocity = 10;
         private int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
         private int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
@@ -63,12 +57,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             System.out.println("X= " + x + " Y= " + y);
 
             if(MatchLeftPixels(y)){
-                characterAlien.y = characterAlien.y - (characterAlien.yVelocity * 10);
+                characterAlien.y = characterAlien.y - (characterAlien.yVelocity * 5);
                 return true;
             }
 
             if(MatchRightPixels(y)){
-                characterAlien.y = characterAlien.y + (characterAlien.yVelocity * 10);
+                characterAlien.y = characterAlien.y + (characterAlien.yVelocity * 5);
                 return true;
             }
 
@@ -120,6 +114,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             pipe1.update();
             pipe2.update();
             pipe3.update();
+            privacy1.update();
+            privacy2.update();
+            security1.update();
+            security2.update();
+
         }
 
 
@@ -130,12 +129,16 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             super.draw(canvas);
             if(canvas!=null) {
 
-//                Bitmap space = getResizedBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.space_theme), screenHeight, screenWidth);
+//                Bitmap space = getResizedBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.goalobjects), screenHeight, screenWidth);
 //                Bitmap background = getRotatedBitmap(space, 90);
 //                canvas.drawBitmap (background, 0,0,null);
 
-                canvas.drawRGB (72,61,139);
+                canvas.drawRGB (0,0,0);
                 characterAlien.draw(canvas);
+                privacy1.draw(canvas);
+                privacy2.draw(canvas);
+                security1.draw(canvas);
+                security2.draw(canvas);
                 pipe1.draw(canvas);
                 pipe2.draw(canvas);
                 pipe3.draw(canvas);
@@ -166,14 +169,24 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             Bitmap alienCharacter = getResizedBitmap(BitmapFactory.decodeResource(getResources(), MainActivity.selected_avatar), 300, 240);
             characterAlien = new AlienObject (getRotatedBitmap(alienCharacter, 90));
 
+            Bitmap privacy_bmp = getResizedBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.incognito), 100, 100);
+            Bitmap privacy_bmp2 = getResizedBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.incognito), 100, 100);
+            Bitmap security_bmp = getResizedBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.padlock_blue), 100, 100);
+            Bitmap security_bmp2 = getResizedBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.padlock_blue), 100, 100);
+
+            privacy1 = new CatchObjects(getRotatedBitmap(privacy_bmp, 90), 2400, 500);
+            privacy2 = new CatchObjects(getRotatedBitmap(privacy_bmp2, 90), 3800, 600);
+            security1 = new CatchObjects(getRotatedBitmap(security_bmp, 90), 3000, 600);
+            security2 = new CatchObjects(getRotatedBitmap(security_bmp2, 90), 4600, 500);
+
             Bitmap bmp;
             Bitmap bmp2;
             int y;
             int x;
             bmp = getResizedBitmap(BitmapFactory.decodeResource
-                    (getResources(), R.drawable.robot), 500, Resources.getSystem().getDisplayMetrics().heightPixels / 2);
+                    (getResources(), R.drawable.troll1), 500, Resources.getSystem().getDisplayMetrics().heightPixels / 2);
             bmp2 = getResizedBitmap
-                    (BitmapFactory.decodeResource(getResources(), R.drawable.robot), 500, Resources.getSystem().getDisplayMetrics().heightPixels / 2);
+                    (BitmapFactory.decodeResource(getResources(), R.drawable.troll3), 500, Resources.getSystem().getDisplayMetrics().heightPixels / 2);
 
             Bitmap arrowButton;
             arrowButton = getResizedBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.game_arrow), 300, 240);
@@ -265,36 +278,76 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
                 //figure out what nextInt is & bound
                 int value1 = r.nextInt(500)-1000;
-                int value2 = r.nextInt(500);
+                int value2 = r.nextInt(500) ;
 
                 pipe1.xX = screenWidth + value1 + 1000;
-                pipe1.yY = value2 - 250;
+                pipe1.yY = value2 - 500;
             }
 
             if (pipe2.xX + 500 < 0) {
                 Random r = new Random();
                 int value1 = r.nextInt(500)-1000;
 
-                int value2 = r.nextInt(500);
+                int value2 = r.nextInt(500) ;
 
                 pipe2.xX = screenWidth + value1 + 1000;
-                pipe2.yY = value2 - 250;
+                pipe2.yY = value2 - 500;
             }
 
             if (pipe3.xX + 500 < 0) {
                 Random r = new Random();
                 int value1 = r.nextInt(500)-1000;
 
-                int value2 = r.nextInt(500);
+                int value2 = r.nextInt(500) ;
 
                 pipe3.xX = screenWidth + value1 + 1000;
-                pipe3.yY = value2 - 250;
+                pipe3.yY = value2 - 500;
             }
+
+            if (privacy1.x + 500 < 0){
+                Random r = new Random();
+                int value1 = r.nextInt(750) - 750;
+
+                int value2 = r.nextInt(750) ;
+
+                privacy1.x = screenWidth + value1 + 1000;
+                privacy1.y = value2 - 500;
+            }
+
+            if (privacy2.x + 500 < 0){
+                Random r = new Random();
+                int value1 = r.nextInt(750) - 750;
+
+                int value2 = r.nextInt(750) ;
+
+                privacy2.x = screenWidth + value1 + 1000;
+                privacy2.y = value2 - 500;
+            }
+
+            if (security1.x + 500 < 0){
+                Random r = new Random();
+                int value1 = r.nextInt(750) - 750;
+
+                int value2 = r.nextInt(750) ;
+
+                security1.x = screenWidth + value1 + 1000;
+                security1.y = value2 - 500;
+            }
+
+            if (security2.x + 500 < 0){
+                Random r = new Random();
+                int value1 = r.nextInt(750) - 750;
+
+                int value2 = r.nextInt(750) ;
+
+                security2.x = screenWidth + value1 + 1000;
+                security2.y = value2 - 500;
+            }
+
         }
 
         public void resetLevel() {
-
-            if(score >= 500) {
+            if(score >= 100) {
                 // Any in game variables need to be remembered here
                 MainActivity.score = score;
 //                Intent openMainActivity= new Intent(this.activity2, MainActivity.class);

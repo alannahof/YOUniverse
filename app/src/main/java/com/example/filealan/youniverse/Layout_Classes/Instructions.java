@@ -2,8 +2,10 @@ package com.example.filealan.youniverse.Layout_Classes;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.filealan.youniverse.GameActivity;
 import com.example.filealan.youniverse.R;
@@ -21,12 +23,16 @@ public class Instructions {
 
     public void setInstructionsLayout(){
 
-        Button enterGame = (Button)activity.findViewById(R.id.commenceGame);
+        //Button enterGame = (Button)activity.findViewById(R.id.commenceGame);
+        ImageView instructions = (ImageView) activity.findViewById(R.id.instructions_photo);
+        instructions.setImageResource(R.drawable.instructions);
 
+        Log.d("Game", "Enter game");
 
-        enterGame.setOnClickListener(new View.OnClickListener() {
+        instructions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 activity.startActivity(new Intent(activity, GameActivity.class));
             }
         });

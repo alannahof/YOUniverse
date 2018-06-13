@@ -10,6 +10,8 @@ import com.example.filealan.youniverse.ControlCentre;
 import com.example.filealan.youniverse.MainActivity;
 import com.example.filealan.youniverse.R;
 
+import static java.sql.Types.NULL;
+
 public class Footer_Page {
 
     private static Footer_Page instance = null;
@@ -55,6 +57,10 @@ public class Footer_Page {
                 }
             });
 
+        }
+
+        if (MainActivity.tokens != NULL){
+            tokens.setText(MainActivity.score + " tokens");
         }
 
 

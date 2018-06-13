@@ -1,8 +1,10 @@
 package com.example.filealan.youniverse.Layout_Classes;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -57,9 +59,12 @@ public void setSignUpLayout(){
 
                 MainActivity.user = new User_Object(user_name,password,2131230821,0,0,"test");
 
-               MainActivity.putPatientApi(activity, MainActivity.user);
+                MainActivity.putPatientApi(activity, MainActivity.user);
 
-               ControlCentre.setLayout_MainLoginPage ();
+                ControlCentre.setLayout_AvatarPage ();
+
+                InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             }
         }
     });

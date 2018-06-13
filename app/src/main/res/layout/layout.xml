@@ -21,13 +21,13 @@
     <ImageView
         android:id="@+id/planet2"
         android:layout_width="300dp"
-        android:layout_height="269dp"
+        android:layout_height="200dp"
         android:layout_gravity="left"
         android:src="@drawable/ice_planet" />
 
     <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="500dp">
+        android:layout_height="700dp">
 
 
         <ImageView
@@ -42,7 +42,7 @@
         <ImageView
             android:id="@+id/speech"
             android:layout_width="415dp"
-            android:layout_height="150dp"
+            android:layout_height="250dp"
             android:layout_gravity="center|top"
             android:layout_weight="1"
             android:cropToPadding="false"
@@ -50,31 +50,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="25dp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/instructionsText"
-                android:layout_width="130dp"
-                android:layout_height="70dp"
-                android:layout_gravity="top|center"
-                android:layout_weight="1"
-                android:paddingTop="25dp"
-                android:text="These are the instructions"
-                android:textAlignment="center"
-                android:textColorHint="@android:color/background_dark"
-                android:textSize="14sp"
-                tools:fontFamily="@font/acme" />
-
-            <Button
-                android:id="@+id/commenceGame"
-                android:layout_width="97dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="45dp"
-                android:background="?android:attr/colorControlNormal"
-                android:fontFamily="@font/acme"
-                android:text="Commence!" />
+            <ImageView
+                android:id="@+id/instructions_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:srcCompat="@drawable/instructions" />
 
         </LinearLayout>
 
@@ -83,9 +68,7 @@
             android:id="@+id/alien_guide"
             android:layout_width="171dp"
             android:layout_height="471dp"
-            android:onClick="changeText"
             android:src="@drawable/alien_guide" />
-
 
 
     </FrameLayout>

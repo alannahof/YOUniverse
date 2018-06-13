@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/space_theme"
+    android:background="@drawable/space_theme3"
     android:orientation="vertical">
 
     <TextView
@@ -27,22 +27,50 @@
         android:textAlignment="center"
         android:textSize="30sp" />
 
-    <ImageView
-        android:id="@+id/profile_avatar_placeholder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:src="@drawable/alien_legs_big" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/acme"
-        android:text="Congratulations! You made it through Smeda!  Social media can have a big influence on how we perceive ourselves..."
+        android:text="You can adjust your privacy settings of your online accounts to control who sees your profile and personal information!"
         android:textAlignment="center"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/acme"
+        android:text="Longer passwords are more secure, try and make your passwords 10 characters or more!"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:text="More info" />
+
+    <Button
+        android:id="@+id/evaluation_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:text="NEXT" />
+
+    <ImageView
+        android:id="@+id/evaluation_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/alien_legs_big" />
 
     <LinearLayout
         android:id="@+id/footer"
@@ -88,8 +116,9 @@
             android:layout_weight="1"
             android:fontFamily="@font/acme"
             android:gravity="right"
-            android:text="200 tokens"
-            android:textSize="30sp" />
+            android:text="0 tokens"
+            android:textSize="30sp"
+            android:visibility="invisible" />
     </LinearLayout>
 
 </LinearLayout>

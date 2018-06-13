@@ -5,13 +5,11 @@
     android:id="@+id/overall_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/space_theme2"
     android:orientation="vertical">
 
 
     <TextView
         android:id="@+id/loading_screen_text"
-        tools:fontFamily="@font/acme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
@@ -19,7 +17,8 @@
         android:paddingTop="20dp"
         android:text="You're Off!"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:fontFamily="@font/acme" />
 
     <ImageView
         android:id="@+id/placeholder_spaceship"

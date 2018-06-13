@@ -5,7 +5,7 @@
     android:id="@+id/overall_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/space_theme2"
+    android:background="@drawable/space_theme3"
     android:orientation="vertical">
 
 
@@ -130,8 +130,9 @@
             android:layout_weight="1"
             android:fontFamily="@font/acme"
             android:gravity="right"
-            android:text="200 tokens"
-            android:textSize="30sp" />
+            android:text="0 tokens"
+            android:textSize="30sp"
+            android:visibility="invisible" />
     </LinearLayout>
 
 </LinearLayout>

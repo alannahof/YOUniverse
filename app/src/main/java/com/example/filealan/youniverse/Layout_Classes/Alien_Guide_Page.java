@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.filealan.youniverse.ControlCentre;
+import com.example.filealan.youniverse.MainActivity;
 import com.example.filealan.youniverse.R;
 
 import java.util.ResourceBundle;
@@ -19,8 +20,8 @@ public class Alien_Guide_Page {
     Activity activity;
 
     public Alien_Guide_Page(Activity act){
-        act.setContentView(R.layout.alien_guide);
         activity = act;
+        activity.setContentView(R.layout.alien_guide);
         setAlienPage();
     }
 

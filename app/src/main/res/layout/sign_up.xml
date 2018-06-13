@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/space_theme2"
+    android:background="@drawable/space_theme3"
     android:orientation="vertical">
 
     <TextView
@@ -32,17 +32,6 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/emailAddress_signup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:ems="10"
-        android:fontFamily="@font/acme"
-        android:hint="Email:"
-        android:inputType="textEmailAddress" />
-
-    <EditText
         android:id="@+id/pword_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,6 +41,18 @@
         android:fontFamily="@font/acme"
         android:hint="Password"
         android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/emailAddress_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:ems="10"
+        android:fontFamily="@font/acme"
+        android:hint="Email:"
+        android:inputType="textEmailAddress"
+        android:visibility="invisible" />
 
     <LinearLayout
         android:layout_width="match_parent"
