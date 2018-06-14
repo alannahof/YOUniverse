@@ -134,11 +134,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 //                canvas.drawBitmap (background, 0,0,null);
 
                 canvas.drawRGB (0,0,0);
-                characterAlien.draw(canvas);
                 privacy1.draw(canvas);
                 privacy2.draw(canvas);
                 security1.draw(canvas);
                 security2.draw(canvas);
+                characterAlien.draw(canvas);
                 pipe1.draw(canvas);
                 pipe2.draw(canvas);
                 pipe3.draw(canvas);
@@ -259,8 +259,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                     && characterAlien.x + 300 > pipe3.xX && characterAlien.x < pipe3.xX + 500)
             { resetLevel(); }
 
+
             //Detect if the character has gone off the
-            //bottom or top of the screen
+            //bottom or top of txhe screen
             if (characterAlien.y + 240 < 0) {
                 resetLevel(); }
             if (characterAlien.y > screenHeight) {

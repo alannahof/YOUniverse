@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 
 public class CatchObjects {
 
-        private Bitmap image;
+        public Bitmap image;
         public int x, y;
         public int xVelocity = 10;
         public int yVelocity = 5;
@@ -31,7 +31,15 @@ public class CatchObjects {
 
         }
 
-        public int getX() {
+    public Bitmap getImage() {
+        return image;
+    }
+
+    public void setImage(Bitmap image) {
+        this.image = image;
+    }
+
+    public int getX() {
             return x;
         }
 
