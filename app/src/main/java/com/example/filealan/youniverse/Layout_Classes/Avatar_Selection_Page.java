@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.filealan.youniverse.API_Classes.User_Object;
 import com.example.filealan.youniverse.ControlCentre;
 import com.example.filealan.youniverse.MainActivity;
 import com.example.filealan.youniverse.R;
@@ -96,6 +97,8 @@ public class Avatar_Selection_Page {
                 Log.d("ready button", "button pressed to map world");
                 //Need to remember the avatar that was selected
                 MainActivity.selected_avatar = avatars.get(currentListIndex);
+                MainActivity.user = new User_Object(MainActivity.username, MainActivity.user.getHash(), MainActivity.selected_avatar, MainActivity.tokens, MainActivity.user.getIterations(), MainActivity.user.getSalt());
+                MainActivity.putPatientApi(activity, MainActivity.user);
                 ControlCentre.setLayout_AlienGuide();
             }
         });

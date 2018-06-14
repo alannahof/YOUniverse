@@ -58,7 +58,7 @@ public void setSignUpLayout(){
             } else {
 
                 MainActivity.user = new User_Object(user_name,password,2131230821,0,0,"test");
-
+                MainActivity.username = user_name;
                 MainActivity.putPatientApi(activity, MainActivity.user);
 
                 ControlCentre.setLayout_AvatarPage ();

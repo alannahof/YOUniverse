@@ -28,6 +28,7 @@ public class Settings_Page {
     public void setSettingsLayout(){
 
         ImageButton change_avatar = (ImageButton) activity.findViewById (R.id.settings_avatar_change);
+        change_avatar.setImageResource(MainActivity.selected_avatar);
         Button change_name = (Button) activity.findViewById (R.id.settings_name_change);
         Button logout = (Button) activity.findViewById (R.id.settings_logout);
         final EditText name_change_selection = (EditText) activity.findViewById (R.id.change_my_name);
